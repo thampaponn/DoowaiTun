@@ -10,23 +10,26 @@ import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.plaf.basic.BasicButtonUI;
+import javax.swing.*;
 
 /**
  *
  * @author tunkuki
  */
-public class Admin extends javax.swing.JFrame {
+public class Adminn extends javax.swing.JFrame {
 
     /**
-     * Creates new form Admin
+     * Creates new form admin
      */
-    public Admin() {
+    public Adminn() {
         initComponents();
         addPlaceholderStyle(searchBar);
         removePlaceholderStyle(searchBar);
         jSeparator1.setBackground(new Color(238,238,238));
         jSeparator2.setBackground(new Color(238,238,238));
-        JButton [] btns = {jButton1,jButton2,jButton3,jButton4,jButton5,jButton6,jButton7,jButton10,jButton9,jButton11,jButton12,jButton13};
+        JScrollPane scrollpane = new JScrollPane(cTopPane);
+        scrollpane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        JButton [] btns = {jButton1,jButton4,jButton10,jButton9,jButton11,jButton12,jButton13,jButton14,jButton15,jButton16,jButton8};
         for (JButton btn : btns){
             btn.setUI(new BasicButtonUI());
             btn.setBackground(new Color(255,255,255));
@@ -45,13 +48,7 @@ public class Admin extends javax.swing.JFrame {
 
                 @Override
                 public void mouseEntered(MouseEvent e) {
-                    if (e.getSource().equals(jButton3)){
-                        jButton3.setForeground(Color.PINK);
-                    }
-                    else if (e.getSource().equals(jButton9)){
-                        jButton9.setForeground(Color.GRAY);
-                    }
-                    else {
+                    if (e.getSource().equals(btn)){
                         btn.setBackground(Color.LIGHT_GRAY);
                     }
                 }
@@ -64,7 +61,7 @@ public class Admin extends javax.swing.JFrame {
             });
         } 
     }
-    
+
     private void addPlaceholderStyle(JTextField searchBar){
         Font font = searchBar.getFont();
         font = font.deriveFont(Font.ITALIC);
@@ -78,7 +75,7 @@ public class Admin extends javax.swing.JFrame {
         searchBar.setFont(font);
         searchBar.setForeground(Color.GRAY);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -99,16 +96,16 @@ public class Admin extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         rightPane = new javax.swing.JPanel();
         rTopPane = new javax.swing.JPanel();
-        jButton9 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         searchBar = new javax.swing.JTextField();
+        jButton9 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
         cTopPane = new javax.swing.JPanel();
         jButton8 = new javax.swing.JButton();
         roundedButton1 = new projects.RoundedButton();
@@ -119,27 +116,28 @@ public class Admin extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         roundedButton4 = new projects.RoundedButton();
         jLabel10 = new javax.swing.JLabel();
-        roundedButton6 = new projects.RoundedButton();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         roundedButton5 = new projects.RoundedButton();
         jLabel11 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        roundedButton8 = new projects.RoundedButton();
-        jLabel16 = new javax.swing.JLabel();
+        roundedButton6 = new projects.RoundedButton();
+        jLabel12 = new javax.swing.JLabel();
         roundedButton7 = new projects.RoundedButton();
         jLabel15 = new javax.swing.JLabel();
+        roundedButton8 = new projects.RoundedButton();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1191, 800));
         jPanel1.setLayout(new java.awt.BorderLayout());
 
         sidePane.setBackground(new java.awt.Color(255, 255, 255));
@@ -229,19 +227,6 @@ public class Admin extends javax.swing.JFrame {
         rTopPane.setPreferredSize(new java.awt.Dimension(951, 148));
         rTopPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton9.setBackground(new java.awt.Color(239, 239, 239));
-        jButton9.setFont(new java.awt.Font("Ayuthaya", 1, 13)); // NOI18N
-        jButton9.setText("Admin Control");
-        jButton9.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton9.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        rTopPane.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 110, 30));
-
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projects/images/1144760 2.png"))); // NOI18N
         jButton11.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -306,6 +291,19 @@ public class Admin extends javax.swing.JFrame {
         });
         rTopPane.add(searchBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 115, 400, -1));
 
+        jButton9.setBackground(new java.awt.Color(239, 239, 239));
+        jButton9.setFont(new java.awt.Font("Ayuthaya", 1, 13)); // NOI18N
+        jButton9.setText("Admin Control");
+        jButton9.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton9.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        rTopPane.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 110, 30));
+
         jButton14.setBackground(new java.awt.Color(239, 239, 239));
         jButton14.setFont(new java.awt.Font("Ayuthaya", 1, 13)); // NOI18N
         jButton14.setText("Action");
@@ -319,19 +317,6 @@ public class Admin extends javax.swing.JFrame {
         });
         rTopPane.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 110, 30));
 
-        jButton15.setBackground(new java.awt.Color(239, 239, 239));
-        jButton15.setFont(new java.awt.Font("Ayuthaya", 1, 13)); // NOI18N
-        jButton15.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton15.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        jButton15.setLabel("รูปการ์ตูน");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-        rTopPane.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 110, 30));
-
         jButton16.setBackground(new java.awt.Color(239, 239, 239));
         jButton16.setFont(new java.awt.Font("Ayuthaya", 1, 13)); // NOI18N
         jButton16.setText("ชื่อการ์ตูน");
@@ -343,12 +328,24 @@ public class Admin extends javax.swing.JFrame {
                 jButton16ActionPerformed(evt);
             }
         });
-        rTopPane.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 110, 30));
+        rTopPane.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 110, 30));
+
+        jButton15.setBackground(new java.awt.Color(239, 239, 239));
+        jButton15.setFont(new java.awt.Font("Ayuthaya", 1, 13)); // NOI18N
+        jButton15.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton15.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        jButton15.setLabel("รูปการ์ตูน");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+        rTopPane.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 110, 30));
 
         rightPane.add(rTopPane, java.awt.BorderLayout.NORTH);
 
         cTopPane.setBackground(new java.awt.Color(255, 255, 255));
-        cTopPane.setToolTipText("");
         cTopPane.setMaximumSize(new java.awt.Dimension(951, 148));
         cTopPane.setMinimumSize(new java.awt.Dimension(951, 148));
         cTopPane.setPreferredSize(new java.awt.Dimension(951, 834));
@@ -395,7 +392,6 @@ public class Admin extends javax.swing.JFrame {
         );
 
         cTopPane.add(roundedButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 80, 30));
-        roundedButton1.getAccessibleContext().setAccessibleName("EDIT");
 
         roundedButton2.setBackground(new java.awt.Color(200, 57, 57));
         roundedButton2.setToolTipText("");
@@ -484,61 +480,6 @@ public class Admin extends javax.swing.JFrame {
 
         cTopPane.add(roundedButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 80, 30));
 
-        roundedButton6.setBackground(new java.awt.Color(200, 57, 57));
-        roundedButton6.setToolTipText("");
-        roundedButton6.setRoundBottomLeft(15);
-        roundedButton6.setRoundBottomRight(15);
-        roundedButton6.setRoundTopLeft(15);
-        roundedButton6.setRoundTopRight(15);
-
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("DELETE");
-
-        javax.swing.GroupLayout roundedButton6Layout = new javax.swing.GroupLayout(roundedButton6);
-        roundedButton6.setLayout(roundedButton6Layout);
-        roundedButton6Layout.setHorizontalGroup(
-            roundedButton6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(roundedButton6Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel12)
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-        roundedButton6Layout.setVerticalGroup(
-            roundedButton6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, roundedButton6Layout.createSequentialGroup()
-                .addContainerGap(7, Short.MAX_VALUE)
-                .addComponent(jLabel12)
-                .addContainerGap())
-        );
-
-        cTopPane.add(roundedButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, 80, 30));
-
-        jLabel14.setText("#3");
-        cTopPane.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, -1, -1));
-
-        jLabel6.setText("#4");
-        cTopPane.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, -1, -1));
-
-        jLabel5.setText("#2");
-        cTopPane.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, -1, -1));
-
-        jLabel1.setText("#1");
-        cTopPane.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
-
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("รูปการ์ตูน");
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel3.setMaximumSize(new java.awt.Dimension(55, 20));
-        jLabel3.setMinimumSize(new java.awt.Dimension(55, 20));
-        cTopPane.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 190, 250));
-
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("รูปการ์ตูน");
-        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel4.setMaximumSize(new java.awt.Dimension(55, 20));
-        jLabel4.setMinimumSize(new java.awt.Dimension(55, 20));
-        cTopPane.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 190, 250));
-
         roundedButton5.setBackground(new java.awt.Color(42, 104, 20));
         roundedButton5.setToolTipText("");
         roundedButton5.setRoundBottomLeft(15);
@@ -568,48 +509,34 @@ public class Admin extends javax.swing.JFrame {
 
         cTopPane.add(roundedButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 80, 30));
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("รูปการ์ตูน");
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel2.setMaximumSize(new java.awt.Dimension(55, 20));
-        jLabel2.setMinimumSize(new java.awt.Dimension(55, 20));
-        cTopPane.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 100, 190, 250));
+        roundedButton6.setBackground(new java.awt.Color(200, 57, 57));
+        roundedButton6.setToolTipText("");
+        roundedButton6.setRoundBottomLeft(15);
+        roundedButton6.setRoundBottomRight(15);
+        roundedButton6.setRoundTopLeft(15);
+        roundedButton6.setRoundTopRight(15);
 
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("รูปการ์ตูน");
-        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel13.setMaximumSize(new java.awt.Dimension(55, 20));
-        jLabel13.setMinimumSize(new java.awt.Dimension(55, 20));
-        cTopPane.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 190, 250));
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("DELETE");
 
-        roundedButton8.setBackground(new java.awt.Color(200, 57, 57));
-        roundedButton8.setToolTipText("");
-        roundedButton8.setRoundBottomLeft(15);
-        roundedButton8.setRoundBottomRight(15);
-        roundedButton8.setRoundTopLeft(15);
-        roundedButton8.setRoundTopRight(15);
-
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("DELETE");
-
-        javax.swing.GroupLayout roundedButton8Layout = new javax.swing.GroupLayout(roundedButton8);
-        roundedButton8.setLayout(roundedButton8Layout);
-        roundedButton8Layout.setHorizontalGroup(
-            roundedButton8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(roundedButton8Layout.createSequentialGroup()
+        javax.swing.GroupLayout roundedButton6Layout = new javax.swing.GroupLayout(roundedButton6);
+        roundedButton6.setLayout(roundedButton6Layout);
+        roundedButton6Layout.setHorizontalGroup(
+            roundedButton6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(roundedButton6Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabel16)
+                .addComponent(jLabel12)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
-        roundedButton8Layout.setVerticalGroup(
-            roundedButton8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, roundedButton8Layout.createSequentialGroup()
+        roundedButton6Layout.setVerticalGroup(
+            roundedButton6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, roundedButton6Layout.createSequentialGroup()
                 .addContainerGap(7, Short.MAX_VALUE)
-                .addComponent(jLabel16)
+                .addComponent(jLabel12)
                 .addContainerGap())
         );
 
-        cTopPane.add(roundedButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 310, 80, 30));
+        cTopPane.add(roundedButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, 80, 30));
 
         roundedButton7.setBackground(new java.awt.Color(42, 104, 20));
         roundedButton7.setToolTipText("");
@@ -640,11 +567,80 @@ public class Admin extends javax.swing.JFrame {
 
         cTopPane.add(roundedButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 310, 80, 30));
 
+        roundedButton8.setBackground(new java.awt.Color(200, 57, 57));
+        roundedButton8.setToolTipText("");
+        roundedButton8.setRoundBottomLeft(15);
+        roundedButton8.setRoundBottomRight(15);
+        roundedButton8.setRoundTopLeft(15);
+        roundedButton8.setRoundTopRight(15);
+
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("DELETE");
+
+        javax.swing.GroupLayout roundedButton8Layout = new javax.swing.GroupLayout(roundedButton8);
+        roundedButton8.setLayout(roundedButton8Layout);
+        roundedButton8Layout.setHorizontalGroup(
+            roundedButton8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(roundedButton8Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel16)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        roundedButton8Layout.setVerticalGroup(
+            roundedButton8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, roundedButton8Layout.createSequentialGroup()
+                .addContainerGap(7, Short.MAX_VALUE)
+                .addComponent(jLabel16)
+                .addContainerGap())
+        );
+
+        cTopPane.add(roundedButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 310, 80, 30));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("รูปการ์ตูน");
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel3.setMaximumSize(new java.awt.Dimension(55, 20));
+        jLabel3.setMinimumSize(new java.awt.Dimension(55, 20));
+        cTopPane.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 190, 250));
+
+        jLabel1.setText("#1");
+        cTopPane.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+
+        jLabel5.setText("#2");
+        cTopPane.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, -1, -1));
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("รูปการ์ตูน");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel4.setMaximumSize(new java.awt.Dimension(55, 20));
+        jLabel4.setMinimumSize(new java.awt.Dimension(55, 20));
+        cTopPane.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 190, 250));
+
+        jLabel14.setText("#3");
+        cTopPane.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, -1, -1));
+
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("รูปการ์ตูน");
+        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel13.setMaximumSize(new java.awt.Dimension(55, 20));
+        jLabel13.setMinimumSize(new java.awt.Dimension(55, 20));
+        cTopPane.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 190, 250));
+
+        jLabel6.setText("#4");
+        cTopPane.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, -1, -1));
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("รูปการ์ตูน");
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel2.setMaximumSize(new java.awt.Dimension(55, 20));
+        jLabel2.setMinimumSize(new java.awt.Dimension(55, 20));
+        cTopPane.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 100, 190, 250));
+
         rightPane.add(cTopPane, java.awt.BorderLayout.CENTER);
 
         jPanel1.add(rightPane, java.awt.BorderLayout.CENTER);
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -660,10 +656,6 @@ public class Admin extends javax.swing.JFrame {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
@@ -689,7 +681,7 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_searchBarFocusLost
 
     private void searchBarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchBarMouseClicked
-        jScrollPane2.setVisible(true);
+        //        jScrollPane2.setVisible(true);
     }//GEN-LAST:event_searchBarMouseClicked
 
     private void searchBarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchBarMouseExited
@@ -701,7 +693,7 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_searchBarActionPerformed
 
     private void searchBarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchBarKeyReleased
-        searchFilter(searchBar.getText());
+        //        searchFilter(searchBar.getText());
     }//GEN-LAST:event_searchBarKeyReleased
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -712,13 +704,17 @@ public class Admin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
 
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16ActionPerformed
+
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton15ActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -737,20 +733,20 @@ public class Admin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Adminn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Adminn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Adminn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Adminn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Admin().setVisible(true);
+                new Adminn().setVisible(true);
             }
         });
     }
